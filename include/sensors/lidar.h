@@ -1,8 +1,8 @@
 #ifndef LIDAR_H
 #define LIDAR_H
-#include "../render/render.h"
-#include <ctime>
+#include "render.h"
 #include <chrono>
+#include <ctime>
 
 const double pi = 3.1415;
 

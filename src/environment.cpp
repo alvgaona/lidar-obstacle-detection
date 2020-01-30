@@ -1,12 +1,8 @@
-/* \author Aaron Brown */
-// Create simple 3d highway enviroment using PCL
-// for exploring self-driving car sensors
-
-#include "sensors/lidar.h"
-#include "render/render.h"
-#include "processPointClouds.h"
+#include "render.h"
 // using templates for processPointClouds so also include .cpp to help linker
+#include "../include/processPointClouds.h"
 #include "processPointClouds.cpp"
+#include "sensors/lidar.h"
 
 std::vector<Car> initHighway(bool renderScene, pcl::visualization::PCLVisualizer::Ptr& viewer)
 {

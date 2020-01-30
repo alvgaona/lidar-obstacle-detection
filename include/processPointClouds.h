@@ -3,21 +3,21 @@
 #ifndef PROCESSPOINTCLOUDS_H_
 #define PROCESSPOINTCLOUDS_H_
 
-#include <pcl/io/pcd_io.h>
+#include "box.h"
+#include <chrono>
+#include <ctime>
+#include <iostream>
 #include <pcl/common/common.h>
+#include <pcl/common/transforms.h>
+#include <pcl/filters/crop_box.h>
 #include <pcl/filters/extract_indices.h>
 #include <pcl/filters/voxel_grid.h>
-#include <pcl/filters/crop_box.h>
+#include <pcl/io/pcd_io.h>
 #include <pcl/kdtree/kdtree.h>
-#include <pcl/segmentation/sac_segmentation.h>
 #include <pcl/segmentation/extract_clusters.h>
-#include <pcl/common/transforms.h>
-#include <iostream> 
-#include <string>  
+#include <pcl/segmentation/sac_segmentation.h>
+#include <string>
 #include <vector>
-#include <ctime>
-#include <chrono>
-#include "render/box.h"
 
 template<typename PointT>
 class ProcessPointClouds {

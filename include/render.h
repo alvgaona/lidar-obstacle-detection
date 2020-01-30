@@ -4,11 +4,11 @@
 
 #ifndef RENDER_H
 #define RENDER_H
-#include <pcl/visualization/pcl_visualizer.h>
 #include "box.h"
 #include <iostream>
-#include <vector>
+#include <pcl/visualization/pcl_visualizer.h>
 #include <string>
+#include <vector>
 
 struct Color
 {
