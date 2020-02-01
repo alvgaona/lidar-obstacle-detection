@@ -3,8 +3,8 @@
 #include <Eigen/Geometry>
 
 struct BoxQ {
-  Eigen::Vector3f bboxTransform;
-  Eigen::Quaternionf bboxQuaternion;
+  Eigen::Vector3f bbox_transform;
+  Eigen::Quaternionf bbox_quaternion;
   float cube_length;
   float cube_width;
   float cube_height;

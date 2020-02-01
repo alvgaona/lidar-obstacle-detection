@@ -1,4 +1,4 @@
-#include "render.h"
+#include "../include/render.h"
 
 void Render::RenderHighway(pcl::visualization::PCLVisualizer::Ptr& viewer) {
   // units in meters
@@ -60,7 +60,7 @@ void Render::RenderBox(pcl::visualization::PCLVisualizer::Ptr& viewer, Box box, 
   if (opacity < 0.0) opacity = 0.0;
 
   std::string cube = "box" + std::to_string(id);
-  // viewer->addCube(box.bboxTransform, box.bboxQuaternion, box.cube_length, box.cube_width, box.cube_height, cube);
+  // viewer->addCube(box.bbox_transform, box.bbox_quaternion, box.cube_length, box.cube_width, box.cube_height, cube);
   viewer->addCube(box.x_min, box.x_max, box.y_min, box.y_max, box.z_min, box.z_max, color.r, color.g, color.b, cube);
   viewer->setShapeRenderingProperties(pcl::visualization::PCL_VISUALIZER_REPRESENTATION,
                                       pcl::visualization::PCL_VISUALIZER_REPRESENTATION_WIREFRAME, cube);
@@ -68,7 +68,7 @@ void Render::RenderBox(pcl::visualization::PCLVisualizer::Ptr& viewer, Box box, 
   viewer->setShapeRenderingProperties(pcl::visualization::PCL_VISUALIZER_OPACITY, opacity, cube);
 
   std::string cubeFill = "boxFill" + std::to_string(id);
-  // viewer->addCube(box.bboxTransform, box.bboxQuaternion, box.cube_length, box.cube_width, box.cube_height, cubeFill);
+  // viewer->addCube(box.bbox_transform, box.bbox_quaternion, box.cube_length, box.cube_width, box.cube_height, cubeFill);
   viewer->addCube(box.x_min, box.x_max, box.y_min, box.y_max, box.z_min, box.z_max, color.r, color.g, color.b, cubeFill);
   viewer->setShapeRenderingProperties(pcl::visualization::PCL_VISUALIZER_REPRESENTATION,
                                       pcl::visualization::PCL_VISUALIZER_REPRESENTATION_SURFACE, cubeFill);
@@ -81,14 +81,14 @@ void Render::RenderBox(pcl::visualization::PCLVisualizer::Ptr& viewer, BoxQ box,
   if (opacity < 0.0) opacity = 0.0;
 
   std::string cube = "box" + std::to_string(id);
-  viewer->addCube(box.bboxTransform, box.bboxQuaternion, box.cube_length, box.cube_width, box.cube_height, cube);
+  viewer->addCube(box.bbox_transform, box.bbox_quaternion, box.cube_length, box.cube_width, box.cube_height, cube);
   viewer->setShapeRenderingProperties(pcl::visualization::PCL_VISUALIZER_REPRESENTATION,
                                       pcl::visualization::PCL_VISUALIZER_REPRESENTATION_WIREFRAME, cube);
   viewer->setShapeRenderingProperties(pcl::visualization::PCL_VISUALIZER_COLOR, color.r, color.g, color.b, cube);
   viewer->setShapeRenderingProperties(pcl::visualization::PCL_VISUALIZER_OPACITY, opacity, cube);
 
   std::string cubeFill = "boxFill" + std::to_string(id);
-  viewer->addCube(box.bboxTransform, box.bboxQuaternion, box.cube_length, box.cube_width, box.cube_height, cubeFill);
+  viewer->addCube(box.bbox_transform, box.bbox_quaternion, box.cube_length, box.cube_width, box.cube_height, cubeFill);
   viewer->setShapeRenderingProperties(pcl::visualization::PCL_VISUALIZER_REPRESENTATION,
                                       pcl::visualization::PCL_VISUALIZER_REPRESENTATION_SURFACE, cubeFill);
   viewer->setShapeRenderingProperties(pcl::visualization::PCL_VISUALIZER_COLOR, color.r, color.g, color.b, cubeFill);
