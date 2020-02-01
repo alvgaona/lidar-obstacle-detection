@@ -1,23 +1,16 @@
-cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.11.3)
 
-add_definitions(-std=c++11)
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_FLAGS, "${CXX_FLAGS} -pthread")
 
-set(CXX_FLAGS "-Wall")
-set(CMAKE_CXX_FLAGS, "${CXX_FLAGS}")
-
-project(playback)
+project(ransac)
 
 find_package(PCL 1.2 REQUIRED)
 
-include_directories(${PCL_INCLUDE_DIRS})
-link_directories(${PCL_LIBRARY_DIRS})
-add_definitions(${PCL_DEFINITIONS})
-list(REMOVE_ITEM PCL_LIBRARIES "vtkproj4")
+file(GLOB SOURCES src/*.cpp)
 
-
-add_executable (quizRansac ransac2d.cpp ../../render/render.cpp)
-target_link_libraries (quizRansac ${PCL_LIBRARIES})
-
-
-
-
+add_executable(ransac ransac2d.cpp ../../render.cpp)
+target_include_directories(ransac PRIVATE ${PCL_INCLUDE_DIRS})
+target_link_directories(ransac PRIVATE ${PCL_LIBRARY_DIRS})
+target_compile_definitions(ransac PRIVATE ${PCL_DEFINITIONS})
+target_link_libraries(ransac PRIVATE ${PCL_LIBRARIES})

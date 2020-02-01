@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.11.3)
 
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_FLAGS, "${CXX_FLAGS} -pthread")
