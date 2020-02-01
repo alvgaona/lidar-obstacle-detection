@@ -84,7 +84,6 @@ void Environment::CityBlock(pcl::visualization::PCLVisualizer::Ptr& viewer) {
   }
 }
 
-
 // camera_angle: SWITCH CAMERA ANGLE {XY, TopDown, Side, FPS}
 void Environment::InitCamera(CameraAngle camera_angle, pcl::visualization::PCLVisualizer::Ptr& viewer) {
   viewer->setBackgroundColor(0, 0, 0);
@@ -110,10 +109,8 @@ void Environment::InitCamera(CameraAngle camera_angle, pcl::visualization::PCLVi
   }
 }
 
-
 void Environment::CityBlock(pcl::visualization::PCLVisualizer::Ptr& viewer, ProcessPointClouds<pcl::PointXYZI>& point_processor,
                             const pcl::PointCloud<pcl::PointXYZI>::Ptr& input_cloud) {
-
   pcl::PointCloud<pcl::PointXYZI>::Ptr filtered_cloud =
       point_processor.FilterCloud(input_cloud, 0.15, Eigen::Vector4f(-10, -5, -2, 1), Eigen::Vector4f(30, 8, 1, 1));
 

@@ -5,12 +5,12 @@
 
 #include <vector>
 
-template<typename PointT>
+template <typename PointT>
 struct Node {
   PointT point;
   int id;
-  Node *left;
-  Node *right;
+  Node* left;
+  Node* right;
 
   Node(PointT p, int pid) : point(p), id(pid), left(nullptr), right(nullptr) {}
 };

@@ -2,9 +2,9 @@
 #include <ctime>
 #include <unordered_set>
 
-#include "../../process_point_clouds.cpp"
 #include "../../../include/process_point_clouds.h"
 #include "../../../include/render.h"
+#include "../../process_point_clouds.cpp"
 
 pcl::PointCloud<pcl::PointXYZ>::Ptr CreateData() {
   pcl::PointCloud<pcl::PointXYZ>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZ>());
@@ -130,10 +130,10 @@ std::unordered_set<int> RansacPlane(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, i
     float y3 = cloud->points[*itr].y;
     float z3 = cloud->points[*itr].z;
 
-    float a = (y2-y1)*(z3-z1)-(z2-z1)*(y3-y1);
-    float b = (z2-z1)*(x3-x1)-(x2-x1)*(z3-z1);
-    float c = (x2-x1)*(y3-y1)-(y2-y1)*(x3-x1);
-    float d = -(a*x1 + b*y1 + c*z1);
+    float a = (y2 - y1) * (z3 - z1) - (z2 - z1) * (y3 - y1);
+    float b = (z2 - z1) * (x3 - x1) - (x2 - x1) * (z3 - z1);
+    float c = (x2 - x1) * (y3 - y1) - (y2 - y1) * (x3 - x1);
+    float d = -(a * x1 + b * y1 + c * z1);
 
     for (auto i = 0; i < cloud->points.size(); i++) {
       if (inliers.count(i) > 0) {
@@ -145,7 +145,7 @@ std::unordered_set<int> RansacPlane(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, i
       float y4 = point.y;
       float z4 = point.z;
 
-      float d = fabs(a*x4 + b*y4 +c*z4 +d)/sqrt(a*a + b*b + c*c);
+      float d = fabs(a * x4 + b * y4 + c * z4 + d) / sqrt(a * a + b * b + c * c);
 
       if (d <= distance_tolerance) {
         inliers.insert(i);

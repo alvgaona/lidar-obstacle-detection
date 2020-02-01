@@ -18,7 +18,8 @@ void Render::RenderHighway(pcl::visualization::PCLVisualizer::Ptr& viewer) {
 }
 
 int count_rays = 0;
-void Render::RenderRays(pcl::visualization::PCLVisualizer::Ptr& viewer, const Vect3& origin, const pcl::PointCloud<pcl::PointXYZ>::Ptr& cloud) {
+void Render::RenderRays(pcl::visualization::PCLVisualizer::Ptr& viewer, const Vect3& origin,
+                        const pcl::PointCloud<pcl::PointXYZ>::Ptr& cloud) {
   for (pcl::PointXYZ point : cloud->points) {
     viewer->addLine(pcl::PointXYZ(origin.x, origin.y, origin.z), point, 1, 0, 0, "ray" + std::to_string(count_rays));
     count_rays++;
@@ -32,15 +33,15 @@ void Render::ClearRays(pcl::visualization::PCLVisualizer::Ptr& viewer) {
   }
 }
 
-void Render::RenderPointCloud(pcl::visualization::PCLVisualizer::Ptr& viewer, const pcl::PointCloud<pcl::PointXYZ>::Ptr& cloud, std::string name,
-                      Color color) {
+void Render::RenderPointCloud(pcl::visualization::PCLVisualizer::Ptr& viewer, const pcl::PointCloud<pcl::PointXYZ>::Ptr& cloud,
+                              std::string name, Color color) {
   viewer->addPointCloud<pcl::PointXYZ>(cloud, name);
   viewer->setPointCloudRenderingProperties(pcl::visualization::PCL_VISUALIZER_POINT_SIZE, 4, name);
   viewer->setPointCloudRenderingProperties(pcl::visualization::PCL_VISUALIZER_COLOR, color.r, color.g, color.b, name);
 }
 
-void Render::RenderPointCloud(pcl::visualization::PCLVisualizer::Ptr& viewer, const pcl::PointCloud<pcl::PointXYZI>::Ptr& cloud, std::string name,
-                      Color color) {
+void Render::RenderPointCloud(pcl::visualization::PCLVisualizer::Ptr& viewer, const pcl::PointCloud<pcl::PointXYZI>::Ptr& cloud,
+                              std::string name, Color color) {
   if (color.r == -1) {
     // Select color based off of cloud intensity
     pcl::visualization::PointCloudColorHandlerGenericField<pcl::PointXYZI> intensity_distribution(cloud, "intensity");

@@ -27,10 +27,9 @@ int main(int argc, char** argv) {
     environment.CityBlock(viewer, point_processor, input_cloud);
 
     stream_itr++;
-    if(stream_itr==stream.end()) {
+    if (stream_itr == stream.end()) {
       stream_itr = stream.begin();
     }
     viewer->spinOnce();
-
   }
 }

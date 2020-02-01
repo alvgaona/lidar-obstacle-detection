@@ -48,7 +48,7 @@ struct KdTree {
         }
       }
 
-      if ((target[depth % 2] - distance_tolerance) < node->point[depth % 2]){
+      if ((target[depth % 2] - distance_tolerance) < node->point[depth % 2]) {
         SearchHelper(target, node->left, depth + 1, distance_tolerance, ids);
       }
       if ((target[depth % 2] + distance_tolerance) > node->point[depth % 2]) {

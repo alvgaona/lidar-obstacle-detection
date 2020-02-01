@@ -2,8 +2,8 @@
 #include <string>
 
 #include "../../../include/box.h"
-#include "kdtree.h"
 #include "../../../include/render.h"
+#include "kdtree.h"
 
 // Arguments:
 // window is the region to draw box around

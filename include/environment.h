@@ -1,6 +1,5 @@
 #include "lidar.h"
 #include "process_point_clouds.h"
-
 #include "render.h"
 
 class Environment {
@@ -12,6 +11,6 @@ class Environment {
   void SimpleHighway(pcl::visualization::PCLVisualizer::Ptr& viewer);
   void CityBlock(pcl::visualization::PCLVisualizer::Ptr& viewer);
   void CityBlock(pcl::visualization::PCLVisualizer::Ptr& viewer, ProcessPointClouds<pcl::PointXYZI>& point_processor,
-                              const pcl::PointCloud<pcl::PointXYZI>::Ptr& input_cloud);
+                 const pcl::PointCloud<pcl::PointXYZI>::Ptr& input_cloud);
   void InitCamera(CameraAngle camera_angle, pcl::visualization::PCLVisualizer::Ptr& viewer);
 };

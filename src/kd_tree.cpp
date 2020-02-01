@@ -58,7 +58,7 @@ void KdTree<PointT>::SearchHelper(PointT target, Node<PointT>* node, int depth, 
 
     // TODO: Reification is needed in this piece of code.
     if (current_dimension == 0) {
-      if ((target.x - distance_tolerance) < node->point.x){
+      if ((target.x - distance_tolerance) < node->point.x) {
         SearchHelper(target, node->left, depth + 1, distance_tolerance, ids);
       }
       if ((target.x + distance_tolerance) > node->point.x) {

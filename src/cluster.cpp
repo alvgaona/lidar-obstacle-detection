@@ -16,8 +16,8 @@ void ClusterHelper(int index, typename pcl::PointCloud<PointT>::Ptr cloud, std::
 }
 
 template <typename PointT>
-std::vector<std::vector<int>> EuclideanCluster(typename pcl::PointCloud<PointT>::Ptr cloud, KdTree<PointT>* tree,
-                                               float distance_tolerance, int min_size, int max_size) {
+std::vector<std::vector<int>> EuclideanCluster(typename pcl::PointCloud<PointT>::Ptr cloud, KdTree<PointT>* tree, float distance_tolerance,
+                                               int min_size, int max_size) {
   std::vector<std::vector<int>> clusters;
 
   std::vector<bool> processed(cloud->points.size(), false);
@@ -31,7 +31,7 @@ std::vector<std::vector<int>> EuclideanCluster(typename pcl::PointCloud<PointT>:
 
     std::vector<int> cluster;
     ClusterHelper(i, cloud, cluster, processed, tree, distance_tolerance, min_size, max_size);
-    if(cluster.size() > min_size) {
+    if (cluster.size() > min_size) {
       clusters.emplace_back(cluster);
     }
 

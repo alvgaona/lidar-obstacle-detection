@@ -38,7 +38,7 @@ typename pcl::PointCloud<PointT>::Ptr ProcessPointClouds<PointT>::FilterCloud(ty
 
   pcl::PointIndices::Ptr inliers{new pcl::PointIndices};
 
-  for(auto& point : indices) {
+  for (auto& point : indices) {
     inliers->indices.emplace_back(point);
   }
 
@@ -59,7 +59,6 @@ typename pcl::PointCloud<PointT>::Ptr ProcessPointClouds<PointT>::FilterCloud(ty
 template <typename PointT>
 std::pair<typename pcl::PointCloud<PointT>::Ptr, typename pcl::PointCloud<PointT>::Ptr> ProcessPointClouds<PointT>::SeparateClouds(
     pcl::PointIndices::Ptr inliers, typename pcl::PointCloud<PointT>::Ptr cloud) {
-
   typename pcl::PointCloud<PointT>::Ptr obstacle_cloud(new pcl::PointCloud<PointT>());
   typename pcl::PointCloud<PointT>::Ptr plane_cloud(new pcl::PointCloud<PointT>());
 
@@ -189,7 +188,7 @@ std::vector<typename pcl::PointCloud<PointT>::Ptr> ProcessPointClouds<PointT>::C
   std::vector<std::vector<int>> ec_result = EuclideanCluster(cloud, tree.get(), cluster_tolerance, min_size, max_size);
 
   std::vector<pcl::PointIndices> cluster_indices;
-  for (auto& c: ec_result) {
+  for (auto& c : ec_result) {
     pcl::PointIndices indices;
     indices.indices = c;
     cluster_indices.emplace_back(indices);
