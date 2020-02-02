@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.11.3)
 
 set(CMAKE_CXX_STANDARD 14)
+set(CXX_FLAGS "-Wall")
 set(CMAKE_CXX_FLAGS, "${CXX_FLAGS} -pthread")
 
 project(lidar_obstacle_detection)

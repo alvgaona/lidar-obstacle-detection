@@ -1,5 +1,5 @@
-#ifndef RENDER_H
-#define RENDER_H
+#ifndef RENDER_H_
+#define RENDER_H_
 
 #include <pcl/visualization/pcl_visualizer.h>
 

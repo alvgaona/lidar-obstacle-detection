@@ -1,3 +1,6 @@
+#ifndef LIDAR_OBSTACLE_DETECTION_ENVIRONMENT_H_
+#define LIDAR_OBSTACLE_DETECTION_ENVIRONMENT_H_
+
 #include "lidar.h"
 #include "process_point_clouds.h"
 #include "render.h"
@@ -14,3 +17,5 @@ class Environment {
                  const pcl::PointCloud<pcl::PointXYZI>::Ptr& input_cloud);
   void InitCamera(CameraAngle camera_angle, pcl::visualization::PCLVisualizer::Ptr& viewer);
 };
+
+#endif

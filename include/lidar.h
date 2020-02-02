@@ -1,5 +1,6 @@
-#ifndef LIDAR_H
-#define LIDAR_H
+#ifndef LIDAR_H_
+#define LIDAR_H_
+
 #include <chrono>
 #include <ctime>
 
