@@ -62,7 +62,7 @@ brew options pcl
 brew install pcl
 ```
 
-**IMPORTANT NOTE**: If you're using `pcl-1.9.1` please follow this [link][PCL Bug]
+**IMPORTANT NOTE**: If you're using `pcl-1.9.1` please follow this [link][PCL Bug].
 
 #### Build from Source
 
