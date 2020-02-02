@@ -30,7 +30,7 @@ sudo apt install libpcl-dev
 
 ### Windows 
 
-Follow this [link][PCL for Windows]
+Follow this [link][PCL for Windows].
 
 ### MAC
 
